@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+</head>
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <form id="loginForm" onsubmit="validateForm(event)">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Login</button>
+    </form>
+    <p id="error"></p>
+  </div>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0ebeb;
+    background-image: url("BACKGROUND.jpg");
+  }
+  
+  .container {
+    max-width: 320px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  #error {
+    color: red;
+    text-align: center;
+  }
+  
+  </style>
+  
+  <script>
+    function validateForm(event) {
+    event.preventDefault(); // Prevent form submission
+  
+    // Get the values from the form inputs
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    function myfunction(){
+        window.location.href = 'loading.html';
+    }
+  
+    // Check if the username and password are valid
+    if (username === 'admin' && password === 'password') {
+      // Redirect to the dashboard or desired page on successful login
+      window.location.href = 'dashboard.html';
+    } else {
+      // Display an error message
+      document.getElementById('error').textContent = 'Please wait....';
+      setTimeout(myfunction,2000);
+      
+    }
+  }
+  
+  </script>
+</body>
+</html>
